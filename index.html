@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neema Charo Tutorial - Learn SPCK</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+  <div class="container header-flex">
+    <div class="logo-profile">
+      <img src="profiles/profile 2.png" alt="Neema Charo" class="profile-pic">
+      <h1 class="logo">Neema Charo Tutorial</h1>
+    </div>
+    <
+    <button id="modeToggle" class="btn">Dark Mode</button>
+  </div>
+</header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h2>Learn How to Create SPCK Projects</h2>
+      <p>Edit code and see live preview instantly. Perfect for beginners & pros!</p>
+      <a href="#tutorial" class="btn">Start Learning</a>
+    </div>
+    <nav>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#tutorial">Tutorial</a></li>
+    <li><a href="#live-editor">Live Editor</a></li>
+    <li><a href="#tips">Tips</a></li>
+
+    <!-- MY WEBSITES -->
+    <li>
+      <a href="https://neemadarling.github.io/MySPCKwebsite-/" target="_blank">
+        My SPCK Website
+      </a>
+    </li>
+    <li>
+      <a href="https://neemadarling.github.io/MysecondSPCKweb/" target="_blank">
+        My Second SPCK Website
+      </a>
+    </li>
+
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+  </section>
+
+  <!-- TUTORIAL -->
+  <section id="tutorial" class="tutorial">
+    <div class="container">
+      <h2>Step-by-Step Tutorial</h2>
+      <ol>
+        <li>Create a new project folder in SPCK</li>
+        <li>Initialize Git Repository</li>
+        <li>Add Remote GitHub URL</li>
+        <li>Commit & Push</li>
+        <li>Enable GitHub Pages to make it live</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- LIVE CODE EDITOR WITH TABS -->
+  <section id="live-editor" class="live-editor">
+    <div class="container">
+      <h2>Live SPCK Code Editor</h2>
+      <!-- COMMUNITY PROJECTS -->
+<section id="community" class="community">
+  <div class="container">
+    <h2>Community SPCK Projects</h2>
+
+    <!-- Submit Form -->
+    <h3>Submit Your Project</h3>
+    <form id="projectForm">
+      <input type="text" id="projName" placeholder="Project Name" required>
+      <textarea id="projDesc" rows="3" placeholder="Project Description" required></textarea>
+      <textarea id="projHTML" rows="4" placeholder="HTML Code" required></textarea>
+      <textarea id="projCSS" rows="4" placeholder="CSS Code" required></textarea>
+      <textarea id="projJS" rows="4" placeholder="JS Code" required></textarea>
+      <button type="submit" class="btn">Submit Project</button>
+    </form>
+
+    <!-- Display Projects -->
+    <h3>Community Projects</h3>
+    <div id="projectsList" class="projects-list">
+      <p>No projects submitted yet. Be the first!</p>
+    </div>
+  </div>
+</section>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchExample('example1')">Hello SPCK</button>
+        <button class="tab-btn" onclick="switchExample('example2')">Colored Box</button>
+        <button class="tab-btn" onclick="switchExample('example3')">Interactive Button</button>
+      </div>
+
+      <!-- Editor Area -->
+      <div class="editor-container">
+
+        <div class="editor">
+          <h3>HTML</h3>
+          <textarea id="htmlCode"></textarea>
+        </div>
+
+        <div class="editor">
+          <h3>CSS</h3>
+          <textarea id="cssCode"></textarea>
+        </div>
+
+        <div class="editor">
+          <h3>JavaScript</h3>
+          <textarea id="jsCode"></textarea>
+        </div>
+
+      </div>
+
+      <div class="editor-buttons">
+        <button onclick="runCode()" class="btn">Run Code</button>
+        <button onclick="copyAll()" class="btn">Copy All Code</button>
+      </div>
+
+      <h3>Live Preview</h3>
+      <iframe id="preview" class="preview"></iframe>
+    </div>
+  </section>
+
+  <!-- TIPS -->
+  <section id="tips" class="tips">
+    <div class="container">
+      <h2>Tips for SPCK</h2>
+      <ul>
+        <li>Always save your work frequently in SPCK.</li>
+        <li>Test your HTML/CSS/JS in the live preview.</li>
+        <li>Use separate files for larger projects.</li>
+        <li>Use descriptive names for folders, files, and branches.</li>
+        <li>Copy & experiment with the examples to learn faster.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <form action="#" method="POST">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Neema Charo Tutorial. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    // Project Examples
+    const examples = {
+      example1: {
+        html: '<h1>Hello SPCK!</h1>',
+        css: 'h1 { color: #0077b6; text-align:center; margin-top:50px; }',
+        js: "console.log('Hello SPCK!');"
+      },
+      example2: {
+        html: '<div class="box"></div>',
+        css: '.box { width:100px; height:100px; background:#fcbf49; margin:50px auto; }',
+        js: ''
+      },
+      example3: {
+        html: '<button onclick="alert(\'Clicked!\')">Click Me</button>',
+        css: 'button { padding:10px 20px; background:#0077b6; color:#fff; border:none; border-radius:5px; cursor:pointer; }',
+        js: ''
+      }
+    };
+
+    // Initialize first example
+    function loadExample(name){
+      document.getElementById('htmlCode').value = examples[name].html;
+      document.getElementById('cssCode').value = examples[name].css;
+      document.getElementById('jsCode').value = examples[name].js;
+      runCode();
+    }
+    loadExample('example1');
+
+    // Switch Tabs
+    function switchExample(name){
+      document.querySelectorAll('.tab-btn').forEach(btn=>btn.classList.remove('active'));
+      event.target.classList.add('active');
+      loadExample(name);
+    }
+
+    // Run Code
+    function runCode(){
+      const html = document.getElementById('htmlCode').value;
+      const css = document.getElementById('cssCode').value;
+      const js = document.getElementById('jsCode').value;
+      const preview = document.getElementById('preview');
+      preview.srcdoc = `
+        <html>
+          <head><style>${css}</style></head>
+          <body>${html}<script>${js}<\/script></body>
+        </html>`;
+    }
+
+    // Copy All Code
+    function copyAll(){
+      const code = 
+        'HTML:\n'+document.getElementById('htmlCode').value+
+        '\n\nCSS:\n'+document.getElementById('cssCode').value+
+        '\n\nJS:\n'+document.getElementById('jsCode').value;
+      navigator.clipboard.writeText(code).then(()=> alert('All code copied!'));
+    }
+
+    // Dark/Light Mode
+    const toggle = document.getElementById('modeToggle');
+    toggle.addEventListener('click', ()=>{
+      document.body.classList.toggle('dark');
+      toggle.textContent = document.body.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
+    });
+    
+    I // COMMUNITY PROJECTS
+
+const projectForm = document.getElementById('projectForm');
+const projectsList = document.getElementById('projectsList');
+
+let projects = JSON.parse(localStorage.getItem('communityProjects')) || [];
+
+// Function to display projects
+function displayProjects(){
+  projectsList.innerHTML = '';
+  if(projects.length === 0){
+    projectsList.innerHTML = '<p>No projects submitted yet. Be the first!</p>';
+    return;
+  }
+  projects.forEach((p, index) => {
+    const div = document.createElement('div');
+    div.classList.add('project-card');
+    div.innerHTML = `
+      <h4>${p.name}</h4>
+      <p>${p.desc}</p>
+      <button onclick="loadCommunityProject(${index})" class="btn">Load in Editor</button>
+    `;
+    projectsList.appendChild(div);
+  });
+}
+
+// Load project into editor
+function loadCommunityProject(index){
+  const p = projects[index];
+  document.getElementById('htmlCode').value = p.html;
+  document.getElementById('cssCode').value = p.css;
+  document.getElementById('jsCode').value = p.js;
+  runCode();
+  // Switch to live editor tab
+  document.querySelectorAll('.tab-btn').forEach(btn=>btn.classList.remove('active'));
+}
+
+// Handle form submit
+projectForm.addEventListener('submit', (e)=>{
+  e.preventDefault();
+  const newProject = {
+    name: document.getElementById('projName').value,
+    desc: document.getElementById('projDesc').value,
+    html: document.getElementById('projHTML').value,
+    css: document.getElementById('projCSS').value,
+    js: document.getElementById('projJS').value
+  };
+  projects.push(newProject);
+  localStorage.setItem('communityProjects', JSON.stringify(projects));
+  projectForm.reset();
+  displayProjects();
+});
+
+// Initial display
+displayProjects();
+  </script>
+
+</body>
+</html>
