@@ -49,6 +49,7 @@ body.dark .editor textarea { background:#333; color:#ddd; border:1px solid #555;
 /* FOOTER */
 footer { background:#111; color:#fff; text-align:center; padding:2rem 0; }
 
+
 /* RESPONSIVE */
 @media(max-width:768px){
   header nav ul { flex-direction:column; text-align:center; }
@@ -99,4 +100,54 @@ nav ul li a {
   nav ul {
     flex-wrap: nowrap;
   }
+}
+.whatsapp-header-btn {
+  background: #25D366;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 10px;
+  transition: 0.3s;
+}
+
+.whatsapp-header-btn:hover {
+  background: #128C7E;
+  transform: scale(1.05);
+}
+.join-now-section {
+  background: #25D366;
+  color: #fff;
+  text-align: center;
+  padding: 50px 20px;
+  margin: 20px 0;
+  border-radius: 15px;
+}
+
+.join-now-section h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.join-now-section p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.join-now-section a.whatsapp-btn-large {
+  display: inline-block;
+  padding: 15px 30px;
+  background: #fff;
+  color: #25D366;
+  font-weight: bold;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.join-now-section a.whatsapp-btn-large:hover {
+  background: #e6ffe6;
+  transform: scale(1.05);
 }
