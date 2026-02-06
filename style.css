@@ -50,104 +50,131 @@ body.dark .editor textarea { background:#333; color:#ddd; border:1px solid #555;
 footer { background:#111; color:#fff; text-align:center; padding:2rem 0; }
 
 
-/* RESPONSIVE */
-@media(max-width:768px){
-  header nav ul { flex-direction:column; text-align:center; }
-  header nav ul li { margin:0.5rem 0; }
-  .editor-container { flex-direction:column; }
+/* ============================= */
+/* NEEMA CHARO TUTORIAL WEBSITE CSS */
+/* ============================= */
+
+/* ---------- 1. Body & HTML ---------- */
+html, body {
+    height: auto;             /* allow full page height */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;       /* prevent horizontal scroll */
+    overflow-y: auto;         /* enable vertical scroll */
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;  /* smooth scrolling */
+    background: #f5f5f5;
+    color: #333;
 }
-.header-flex { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; }
-.logo-profile { display:flex; align-items:center; gap:10px; }
-.profile-pic { width:50px; height:50px; border-radius:50%; object-fit:cover; border:2px solid #fff; }
-body.dark .profile-pic { border:2px solid #ddd; }
-/* FIX HEADER & NAV LAYOUT */
+
+/* ---------- 2. Header ---------- */
 header {
-  background: #0077b6;
-}
-
-header .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-nav ul li a {
-  background: rgba(255,255,255,0.15);
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 14px;
-  white-space: nowrap;
-}
-
-/* Desktop improvement */
-@media (min-width: 768px) {
-  header .container {
-    flex-direction: row;
+    position: fixed;        /* keeps header on top */
+    top: 0;
+    width: 100%;
+    background: #0077b6;
+    color: #fff;
+    z-index: 999;
+    display: flex;
     justify-content: space-between;
-  }
-
-  nav ul {
-    flex-wrap: nowrap;
-  }
-}
-.whatsapp-header-btn {
-  background: #25D366;
-  color: #fff;
-  padding: 8px 15px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-left: 10px;
-  transition: 0.3s;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
-.whatsapp-header-btn:hover {
-  background: #128C7E;
-  transform: scale(1.05);
+/* Push content below fixed header */
+#home, .hero-section {
+    padding-top: 120px; /* adjust based on header height */
+    padding-bottom: 50px;
 }
+
+/* ---------- 3. Sections ---------- */
+section {
+    min-height: auto;       /* allow sections to grow with content */
+    height: auto;
+    padding: 50px 20px;
+    margin: 20px auto;
+    max-width: 1000px;      /* keeps content centered */
+}
+
+/* ---------- 4. Footer ---------- */
+footer {
+    position: relative;     /* not fixed */
+    bottom: 0;
+    width: 100%;
+    background: #0077b6;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+/* ---------- 5. WhatsApp Buttons ---------- */
+.whatsapp-btn, .whatsapp-header-btn, .whatsapp-btn-large {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #25D366;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.whatsapp-btn:hover, .whatsapp-header-btn:hover, .whatsapp-btn-large:hover {
+    background: #128C7E;
+    transform: scale(1.05);
+}
+
+/* ---------- 6. Hero Section (Optional style) ---------- */
+.hero-section {
+    text-align: center;
+    background: #00b4d8;
+    color: #fff;
+}
+
+.hero-section h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 18px;
+}
+
+/* ---------- 7. Join Now Section ---------- */
 .join-now-section {
-  background: #25D366;
-  color: #fff;
-  text-align: center;
-  padding: 50px 20px;
-  margin: 20px 0;
-  border-radius: 15px;
+    background: #25D366;
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+    margin: 20px auto;
+    border-radius: 15px;
+    max-width: 900px;
 }
 
 .join-now-section h2 {
-  font-size: 28px;
-  margin-bottom: 10px;
+    font-size: 28px;
+    margin-bottom: 10px;
 }
 
 .join-now-section p {
-  font-size: 16px;
-  margin-bottom: 20px;
+    font-size: 16px;
+    margin-bottom: 20px;
 }
 
-.join-now-section a.whatsapp-btn-large {
-  display: inline-block;
-  padding: 15px 30px;
-  background: #fff;
-  color: #25D366;
-  font-weight: bold;
-  border-radius: 50px;
-  text-decoration: none;
-  font-size: 18px;
-  transition: 0.3s;
-}
-
-.join-now-section a.whatsapp-btn-large:hover {
-  background: #e6ffe6;
-  transform: scale(1.05);
+/* ---------- 8. Responsive ---------- */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    nav ul {
+        flex-direction: column;
+    }
+    .join-now-section {
+        padding: 30px 15px;
+    }
+    .hero-section h1 {
+        font-size: 32px;
+    }
 }
