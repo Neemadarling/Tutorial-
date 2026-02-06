@@ -1,5 +1,5 @@
 /* ============================= */
-/* NEEMA CHARO TUTORIAL WEBSITE CSS */
+/* NEEMA CHARO TUTORIAL WEBSITE CSS - FULL VERSION */
 /* ============================= */
 
 /* ---------- 1. Body & HTML ---------- */
@@ -97,25 +97,39 @@ header nav ul li a:hover {
     cursor: pointer;
 }
 
-/* ---------- 4. Hero Section ---------- */
+/* ---------- 4. Hero Section (Homepage) ---------- */
 .hero {
-    margin-top: 120px; /* space for fixed header */
+    margin-top: 120px;          /* space for fixed header */
     text-align: center;
-    background: #00b4d8;
+    padding: 80px 20px 60px 20px;
     color: #fff;
-    padding: 60px 20px 50px 20px;
+    
+    /* Background */
+    background: url('hero-bg.jpg') no-repeat center center; /* replace with your image */
+    background-size: cover;
+    background-attachment: fixed; /* scroll effect */
+    
+    min-height: 500px;          /* ensures section is tall enough */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Hero text */
 .hero h2 {
-    font-size: 36px;
+    font-size: 42px;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
 }
 
 .hero p {
     font-size: 18px;
     margin-bottom: 25px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
 }
 
+/* Hero button */
 .hero .btn {
     background: #ffd700;
     color: #0077b6;
@@ -393,7 +407,29 @@ footer a.whatsapp-btn:hover {
     transform: scale(1.05);
 }
 
-/* ---------- 13. Responsive ---------- */
+/* ---------- 13. Floating WhatsApp Button ---------- */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.floating-whatsapp:hover {
+    background: #128C7E;
+    transform: scale(1.05);
+}
+
+/* ---------- 14. Responsive ---------- */
 @media screen and (max-width: 768px) {
     header {
         flex-direction: column;
@@ -402,8 +438,11 @@ footer a.whatsapp-btn:hover {
     header nav ul {
         flex-direction: column;
     }
+    .hero {
+        padding: 60px 15px 40px 15px;
+    }
     .hero h2 {
-        font-size: 28px;
+        font-size: 30px;
     }
     .hero p {
         font-size: 16px;
@@ -413,5 +452,12 @@ footer a.whatsapp-btn:hover {
     }
     .editor-container {
         flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .floating-whatsapp {
+        padding: 12px 15px;
+        font-size: 14px;
     }
     }
