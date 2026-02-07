@@ -7,10 +7,14 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   line-height: 1.6;
-  background: #f4f7fb;
+  background: #f4f6f8;
   color: #333;
 }
 
@@ -28,6 +32,7 @@ body {
 ===================== */
 header {
   background: #0a2540;
+  color: #fff;
   padding: 15px 0;
   position: sticky;
   top: 0;
@@ -38,6 +43,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 15px;
   flex-wrap: wrap;
 }
 
@@ -55,49 +61,62 @@ header {
 }
 
 .logo {
-  color: #fff;
-  font-size: 20px;
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
 /* =====================
    NAVIGATION BOXES
 ===================== */
 nav ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
   list-style: none;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
 }
 
 nav ul li a {
   display: block;
-  padding: 10px 15px;
+  text-align: center;
+  padding: 12px;
   background: #ffffff;
   color: #0a2540;
-  border-radius: 8px;
-  text-decoration: none;
+  border-radius: 10px;
   font-weight: 600;
+  text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
 nav ul li a:hover {
   background: #0077b6;
   color: #fff;
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+}
+
+/* =====================
+   WHATSAPP BUTTON
+===================== */
+.whatsapp-header-btn {
+  background: #25D366;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
 }
 
 /* =====================
    BUTTONS
 ===================== */
 .btn {
+  background: #0077b6;
+  color: #fff;
   padding: 10px 18px;
   border: none;
   border-radius: 8px;
-  background: #0077b6;
-  color: #fff;
-  font-weight: 600;
   cursor: pointer;
+  font-weight: 600;
   transition: 0.3s;
 }
 
@@ -105,21 +124,16 @@ nav ul li a:hover {
   background: #023e8a;
 }
 
-.whatsapp-header-btn {
-  background: #25d366;
-  color: #fff;
-  padding: 10px 14px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-}
-
 /* =====================
    HERO SECTION
 ===================== */
 .hero {
-  min-height: 90vh;
-  background: linear-gradient(120deg, #0077b6, #0a2540);
+  min-height: 100vh;
+  background: linear-gradient(
+      rgba(0,0,0,0.55),
+      rgba(0,0,0,0.55)
+    ),
+    url("profiles/profile.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -132,37 +146,17 @@ nav ul li a:hover {
 }
 
 .hero h2 {
-  font-size: 36px;
+  font-size: 2.5rem;
   margin-bottom: 15px;
 }
 
 .hero p {
-  font-size: 18px;
-  margin-bottom: 25px;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
 }
 
 /* =====================
-   BOX SECTIONS (HOME LINKS)
-===================== */
-.join-now-section {
-  padding: 60px 0;
-  background: #ffffff;
-  text-align: center;
-}
-
-.whatsapp-btn-large {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 15px 25px;
-  background: #25d366;
-  color: #fff;
-  font-weight: 700;
-  border-radius: 10px;
-  text-decoration: none;
-}
-
-/* =====================
-   TUTORIAL / TIPS / CONTACT
+   BOX SECTIONS (CARDS)
 ===================== */
 section {
   padding: 70px 0;
@@ -171,7 +165,16 @@ section {
 section h2 {
   text-align: center;
   margin-bottom: 30px;
+  font-size: 2rem;
   color: #0a2540;
+}
+
+.tutorial,
+.tips,
+.live-editor,
+.community,
+.contact {
+  background: #f4f6f8;
 }
 
 .tutorial ol,
@@ -179,9 +182,9 @@ section h2 {
   max-width: 700px;
   margin: auto;
   background: #fff;
-  padding: 30px;
+  padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
 .tutorial li,
@@ -190,12 +193,53 @@ section h2 {
 }
 
 /* =====================
+   JOIN NOW
+===================== */
+.join-now-section {
+  background: #0077b6;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.whatsapp-btn-large {
+  display: inline-block;
+  margin-top: 15px;
+  background: #25D366;
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+/* =====================
    LIVE EDITOR
 ===================== */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #ddd;
+}
+
+.tab-btn.active {
+  background: #0077b6;
+  color: #fff;
+}
+
 .editor-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  gap: 15px;
 }
 
 .editor {
@@ -207,22 +251,15 @@ section h2 {
 
 .editor textarea {
   width: 100%;
-  height: 150px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  height: 140px;
   padding: 10px;
-}
-
-.editor-buttons {
-  text-align: center;
-  margin: 25px 0;
 }
 
 .preview {
   width: 100%;
   height: 300px;
   border-radius: 10px;
-  border: 1px solid #ccc;
+  border: 2px solid #ddd;
 }
 
 /* =====================
@@ -231,8 +268,8 @@ section h2 {
 .project-card {
   background: #fff;
   padding: 15px;
+  margin-bottom: 10px;
   border-radius: 10px;
-  margin-bottom: 15px;
   box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
@@ -240,10 +277,10 @@ section h2 {
    CONTACT
 ===================== */
 .contact form {
-  max-width: 600px;
+  max-width: 500px;
   margin: auto;
   background: #fff;
-  padding: 30px;
+  padding: 25px;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
@@ -251,10 +288,8 @@ section h2 {
 .contact input,
 .contact textarea {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 /* =====================
@@ -264,32 +299,28 @@ footer {
   background: #0a2540;
   color: #fff;
   text-align: center;
-  padding: 20px;
+  padding: 15px 0;
 }
 
 /* =====================
    DARK MODE
 ===================== */
 body.dark {
-  background: #0f172a;
-  color: #e5e7eb;
-}
-
-body.dark header,
-body.dark footer {
-  background: #020617;
-}
-
-body.dark nav ul li a {
-  background: #1e293b;
-  color: #fff;
+  background: #121212;
+  color: #eee;
 }
 
 body.dark section,
 body.dark .editor,
+body.dark .project-card,
 body.dark .tutorial ol,
 body.dark .tips ul,
 body.dark .contact form {
-  background: #020617;
-  color: #e5e7eb;
+  background: #1e1e1e;
+  color: #eee;
+}
+
+body.dark nav ul li a {
+  background: #1e1e1e;
+  color: #fff;
 }
